@@ -1,0 +1,68 @@
+{% extends 'iso/base.html' %}
+
+{% block content %}
+
+
+<h4>Contact Client</h4>
+<form method="POST" action="{% url 'contact-page' %}">
+    {% csrf_token %}
+    <h1 style="background-color:Tomato;">Request For Quote</h1>
+    <div class="alert alert-secondary" role="alert">
+        <h1>(In-house training)</h1>
+        <p>EMAIL TO: iso.th@outlook.com</p>
+        <p>Line ID: isoconsult</p>
+    </div>
+    <!-- Text input-->
+    <div>
+        <label for="Company">Company: </label>
+        <input type="text" name="companame" placeholder="ชื่อบริษัท">
+    </div>
+
+    <div>
+        <label for="address">Address: </label><span></span>
+        <textarea name="address" id="" cols="40" rows="4"></textarea>
+    </div>
+
+    <div>
+        <label for="contact">Contact: </label>
+        <input type="text" name="contact">
+    </div>
+
+    <div>
+        <label for="position">position: </label>
+        <input type="text" name="position">
+    </div>
+
+    <div>
+        <label for="phone">phone: </label>
+        <input type="text" name="phone">
+    </div>
+
+    <div>
+        <label for="email">Email: </label>
+        <input type="email" name="email" placeholder="custommer email">
+    </div>
+
+    <div>
+        <label for="emailCompany">EmailCompany: </label>
+        <input type="email" name="comemail" placeholder="company email">
+    </div>
+    <div>
+        <label for="massage">massage</label>
+        <textarea name="message" id="" cols="50" rows="2"></textarea>
+    </div>
+        <!-- ปุ่มส่ง -->
+        <div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+                <a class="nav-link" href="{% url 'home-page' %}">
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">ยกเลิก</button>
+                    </div>
+                </a>
+        </div>
+        <!-- ปุ่มส่ง -->
+        </div>
+</form>
+{% endblock %}
